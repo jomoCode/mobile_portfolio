@@ -1,50 +1,73 @@
-# Welcome to your Expo app 👋
+# Mobile Portfolio (JomoCode)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A cross-platform (iOS / Android / Web) portfolio app built with Expo, React Native, and TypeScript. Demonstrates a component-driven UI, theming, responsive layout, and a simple contact form integration.
 
-## Get started
+## Features
+- Light / dark theme via `ThemeProvider` (`app/context/theme.tsx`) and `ThemeToggleButton` (`app/components/atoms/ThemeToggleButton.tsx`)
+- Responsive layout for desktop / tablet / mobile (`app/components/Template/Home.tsx`)
+- Reusable UI atoms, molecules, and organisms (buttons, alerts, project cards, images)
+- Contact form sending email via EmailJS REST API (`app/components/organisms/ContactSection.tsx`)
+- Code sample and project detail UIs (`CodeSample`, `ProjectInfo`)
+
+## Quick start
 
 1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Start the dev server (Expo)
+```bash
+npm run start
+# or
+npx expo start
+```
 
-## Learn more
+3. Run on a device / emulator
+```bash
+# Android
+npm run android
 
-To learn more about developing your project with Expo, look at the following resources:
+# iOS
+npm run ios
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+# Web
+npm run web
+```
 
-## Join the community
+See available scripts in `package.json`.
 
-Join our community of developers creating universal apps.
+## Important files & components
+- App entry: `app/index.tsx` — wraps the app with `ThemeProvider`
+- Router / layout: `app/_layout.tsx`
+- Main screen: `app/components/Template/Home.tsx`
+- Theming: `app/context/theme.tsx`
+- Colors & helpers: `COLORS` / `getThemeColors` (files)
+- UI primitives: `CustomButton`, `CustomAlert`, `ProjectImage`, `TinyTextCard`, `Title`, `Text`, `ThemedLink`, `Heading`
+- Organisms: `ContactSection`, `CodeSample`, `ProjectInfo`
+- Layout helpers: `Section`, `SideBySideSection`
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Environment / configuration
+- TypeScript: `tsconfig.json` (project uses strict mode)
+- Expo config: `app.json`
+- Contact form uses EmailJS public REST API. Provide these in your Expo environment (`.env` or Expo secrets):
+
+```text
+EXPO_PUBLIC_EMAILJS_SERVICE_ID
+EXPO_PUBLIC_EMAILJS_TEMPLATE_ID
+EXPO_PUBLIC_EMAILJS_PUBLIC_KEY
+```
+
+(See `app/components/organisms/ContactSection.tsx` for implementation details.)
+
+## Notes & tips
+- Assets referenced via `require(...)` live in `assets/images`.
+- The theme hook throws if used outside the provider — ensure `ThemeProvider` wraps the root (see `app/index.tsx`).
+- The project targets the Expo SDK version listed in `package.json`.
+
+## Contributing
+- Follow the component pattern: atoms → molecules → organisms → templates.
+- Keep components small and stateless where possible; use context/hooks for shared state (e.g., theme).
+
+## License
+This repository is public. Do inform when utilizing.
