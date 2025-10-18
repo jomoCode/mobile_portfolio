@@ -6,7 +6,7 @@ import {
   Linking,
   useWindowDimensions,
 } from "react-native";
-import { Text } from "../atoms/typogrphy/text";
+import { Text, Title } from "../atoms/typogrphy/text";
 import { CustomButton } from "../button"; 
 import { useTheme } from "@/context/theme";
 import { COLORS } from "@/constants/colors";
@@ -62,9 +62,7 @@ export const ProjectInfo: React.FC<ProjectInfoProps> = ({
       ]}
     >
       {/* Title */}
-      <Text variant="md" style={styles.title} numberOfLines={2}>
-        {title}
-      </Text>
+<Title text={title} style={{textAlign:"center"}}/>
 
       {/* Description */}
       <Text variant="md" style={styles.description}>
@@ -119,7 +117,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     gap: 8,
-    marginVertical: 24,
+    marginVertical: 20,
   },
   techBadge: {
     paddingHorizontal: 12,
@@ -127,6 +125,6 @@ const styles = StyleSheet.create({
     borderRadius: 9999,
   },
   button: {
-    marginTop: 8,
+    marginTop: 4,
   },
 });

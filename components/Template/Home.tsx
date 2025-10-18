@@ -189,6 +189,7 @@ const HomeScreen = () => {
 
           {/* PROJECT 1 */}
           <SideBySideSection
+          sideBySideContainerHeight={500}
             left={
               <ProjectInfo
                 title="Fashion shop"
@@ -209,7 +210,7 @@ const HomeScreen = () => {
 
           {/* PROJECT 2 */}
           <SideBySideSection
-            sideBySideContainerHeight={500}
+            sideBySideContainerHeight={600}
             left={
               <ProjectInfo
                 title="Ecommerce Website"
