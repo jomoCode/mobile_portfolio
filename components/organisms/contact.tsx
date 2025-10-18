@@ -220,7 +220,6 @@ const styles = StyleSheet.create({
   },
   content: {
     width: "100%",
-    paddingHorizontal: 20,
     paddingVertical: 20,
   },
   heading: {

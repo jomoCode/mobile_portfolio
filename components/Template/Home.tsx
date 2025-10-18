@@ -230,7 +230,7 @@ const HomeScreen = () => {
         </Section>
 
         {/* CONTACT SECTION */}
-        <Section name="contact">
+        <Section name="contact" style={{paddingTop:5}}>
           <ContactSection
             email="johnjohananmogbolu@gmail.com"
             github="https://github.com/Jomocode"
