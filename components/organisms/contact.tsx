@@ -23,13 +23,12 @@ interface ContactSectionProps {
   medium: string;
 }
 
-export default function ContactSection({
+export const ContactSection = ({
   email,
   github,
   linkedin,
-  twitter,
   medium,
-}: ContactSectionProps) {
+}: ContactSectionProps) => {
   const [form, setForm] = useState({ name: "", email: "", project: "" });
   const { theme } = useTheme();
   const [loading, setLoading] = useState(false);
