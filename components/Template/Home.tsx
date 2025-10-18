@@ -181,7 +181,7 @@ const HomeScreen = () => {
           <CodeSample
             title="Ecommerce Website"
             description="A mobile ecommerce app for selling used items. Includes authentication, image uploads, notifications, and error tracking."
-            tech={["Javascript", "Html", "css",]}
+            tech={["Javascript", "Html", "css"]}
             githubUrl="https://github.com/Jomocode/ecommerce"
           />
 
@@ -189,7 +189,7 @@ const HomeScreen = () => {
 
           {/* PROJECT 1 */}
           <SideBySideSection
-          left={
+            left={
               <ProjectInfo
                 title="Fashion shop"
                 description="A fully responsive online store with product listings, cart functionality, checkout, and an admin dashboard."
@@ -204,14 +204,12 @@ const HomeScreen = () => {
                 aspectRatio={16 / 9}
               />
             }
-            
             style={styles.projectSpacing}
           />
 
           {/* PROJECT 2 */}
           <SideBySideSection
-          sideBySideContainerHeight={500}
-            
+            sideBySideContainerHeight={500}
             left={
               <ProjectInfo
                 title="Ecommerce Website"
@@ -220,7 +218,6 @@ const HomeScreen = () => {
                 liveLink="https://myprojectlive.com"
               />
             }
-
             right={
               <ProjectImage
                 src={require("@/assets/images/ecommerce.webp")}
