@@ -1,13 +1,13 @@
+import { COLORS } from "@/constants/colors";
+import { useTheme } from "@/context/theme";
 import React, { ReactNode } from "react";
 import {
+  Linking,
   Text as RNText,
   TextProps as RNTextProps,
   StyleSheet,
   TouchableOpacity,
-  Linking,
 } from "react-native";
-import { useTheme } from "@/context/theme";
-import { COLORS } from "@/constants/colors";
 
 // Title Component
 interface TitleProps extends RNTextProps {
@@ -94,10 +94,7 @@ const ThemedLink: React.FC<ThemedLinkProps> = ({
 
   return (
     <TouchableOpacity onPress={handlePress} activeOpacity={0.7}>
-      <RNText
-        style={[styles.link, { color: textColor }, style]}
-        {...rest}
-      >
+      <RNText style={[styles.link, { color: textColor }, style]} {...rest}>
         {children}
       </RNText>
     </TouchableOpacity>
@@ -129,10 +126,12 @@ const TextContainer: React.FC<TextContainerProps> = ({
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: 20, // text-xl
-    fontWeight: "600",
+    fontFamily: "Inter_700Bold",
+    fontSize: 22,
+    fontWeight: "700",
   },
   textBase: {
+    fontFamily: "Inter_400Regular",
     width: "100%",
   },
   textSm: {
@@ -146,20 +145,22 @@ const styles = StyleSheet.create({
   },
   textXl: {
     fontSize: 20,
-    fontWeight: "600",
+    fontFamily: "Inter_600SemiBold",
   },
   text2Xl: {
     fontSize: 24,
-    fontWeight: "bold",
+    fontFamily: "Inter_700Bold",
   },
   link: {
-    fontSize: 20,
+    fontSize: 18,
     textDecorationLine: "underline",
+    fontFamily: "Inter_600SemiBold",
   },
   textContainer: {
     fontSize: 20,
+    fontFamily: "Inter_400Regular",
     width: "100%",
   },
 });
 
-export { Text, Title, ThemedLink, TextContainer };
+export { Text, TextContainer, ThemedLink, Title };
