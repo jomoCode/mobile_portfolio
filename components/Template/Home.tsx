@@ -164,16 +164,16 @@ const HomeScreen = () => {
             title="Task Tracker"
             description="Tracks Adherance to tasks. includes local file storage, local notifications, and calendar integration"
             tech={["React Native", "TypeScript", "Bugsnag", "Expo"]}
-            githubUrl="https://github.com/Jomocode/task-tracker"
+            githubUrl="https://github.com/jomoCode/Task_Tracker"
           />
 
           <View style={styles.codeSampleSpacing} />
 
           <CodeSample
             title="Portfolio Website"
-            description="That's this website"
+            description="web portfolio"
             tech={["React", "TypeScript", "Tailwind"]}
-            githubUrl="https://github.com/Jomocode/portfolio"
+            githubUrl="https://github.com/jomoCode/Web-portfolio"
           />
 
           <View style={styles.codeSampleSpacing} />
@@ -182,7 +182,7 @@ const HomeScreen = () => {
             title="Ecommerce Website"
             description="A mobile ecommerce app for selling used items. Includes authentication, image uploads, notifications, and error tracking."
             tech={["Javascript", "Html", "css"]}
-            githubUrl="https://github.com/Jomocode/ecommerce"
+            githubUrl="https://github.com/jomoCode/FashionShop"
           />
 
           <Heading text="Projects" style={styles.projectsHeading} />
@@ -300,8 +300,9 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   aboutSection: {
-    paddingHorizontal: 30,
+    paddingTop: 30,
     width: "100%",
+    paddingBottom:50
   },
   aboutPaddingDesktop: {
     paddingHorizontal: 160,
