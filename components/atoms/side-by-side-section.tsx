@@ -48,7 +48,6 @@ const SideBySideSection: React.FC<SideBySideSectionProps> = ({
     ? sideBySideContainerHeight || screenHeight * 0.7
     : sideBySideContainerHeight || screenHeight * 0.6;
 
-  const Wrapper = scrollable ? ScrollView : View;
 
   return (
     <View
@@ -63,24 +62,21 @@ const SideBySideSection: React.FC<SideBySideSectionProps> = ({
         style,
       ]}
     >
-      <Wrapper
+      <View
         style={[
           styles.side,
           isTablet && styles.halfWidth,
-          { paddingVertical: 10 },
           leftStyle,
         ]}
-        showsVerticalScrollIndicator={false}
       >
         {left}
-      </Wrapper>
+      </View>
 
-      <Wrapper
+      <View
         style={[styles.side, isTablet && styles.halfWidth, rightStyle]}
-        showsVerticalScrollIndicator={false}
       >
         {right}
-      </Wrapper>
+      </View>
     </View>
   );
 };
@@ -88,7 +84,6 @@ const SideBySideSection: React.FC<SideBySideSectionProps> = ({
 const styles = StyleSheet.create({
   container: {
     justifyContent: "center",
-    alignItems: "stretch",
   },
   side: {
     flex: 1,
