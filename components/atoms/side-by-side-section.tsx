@@ -57,7 +57,7 @@ const SideBySideSection: React.FC<SideBySideSectionProps> = ({
           flexDirection: isTablet ? "row" : "column",
           gap,
           width: containerWidth,
-          height: containerHeight,
+          height: isTablet? 400:containerHeight,
         },
         style,
       ]}

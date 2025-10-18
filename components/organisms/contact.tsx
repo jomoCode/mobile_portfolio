@@ -216,11 +216,10 @@ export const ContactSection = ({
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+   width:"100%",
   },
   content: {
     width: "100%",
-    paddingVertical: 20,
   },
   heading: {
     marginBottom: 20,
