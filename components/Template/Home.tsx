@@ -71,7 +71,7 @@ const DescriptionDesktop = () => (
 );
 
 const DescriptionMobile = () => (
-  <Text>
+  <View style={styles.aboutContainer}>
     <Text style={styles.leftText}>
       I&apos;m JomoCode — a full-stack web and mobile developer.
     </Text>
@@ -83,7 +83,7 @@ const DescriptionMobile = () => (
       I&apos;m passionate about turning ideas into functional solutions that
       help businesses and individuals succeed.
     </Text>
-  </Text>
+  </View>
 );
 
 const HomeScreen = () => {
@@ -113,24 +113,23 @@ const HomeScreen = () => {
       >
         {/* SUMMARY SECTION */}
         <Section name="summary" style={styles.summarySection}>
-         
-              <View style={{width:"100%"}}>
-                <Heading text="Mogbolu John" style={styles.textLeftAlign} />
-                <Title
-                  text="Mobile and web developer"
-                  style={styles.textLeftAlign}
-                />
-              </View>
-              <View style={styles.imageContainer}>
-                <Image
-                  source={profileImage}
-                  alt="Profile image of JomoCode"
-                  style={styles.profileImage}
-                  resizeMode="contain"
-                  height={250}
-                  width={350}
-                />
-              </View>
+          <View style={{ width: "100%" }}>
+            <Heading text="Mogbolu John" style={styles.textLeftAlign} />
+            <Title
+              text="Mobile and web developer"
+              style={styles.textLeftAlign}
+            />
+          </View>
+          <View style={styles.imageContainer}>
+            <Image
+              source={profileImage}
+              alt="Profile image of JomoCode"
+              style={styles.profileImage}
+              resizeMode="contain"
+              height={250}
+              width={350}
+            />
+          </View>
         </Section>
 
         {/* ABOUT SECTION */}
@@ -291,8 +290,8 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   imageContainer: {
-    alignItems:"center",
-    width:"100%"
+    alignItems: "center",
+    width: "100%",
   },
   profileImage: {},
   aboutWrapper: {
@@ -300,14 +299,18 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   aboutSection: {
-    paddingTop: 80,
+    paddingTop: 30,
     width: "100%",
   },
   aboutPaddingDesktop: {
     paddingHorizontal: 160,
   },
+  aboutContainer: {
+    width: "100%",
+    gap: 5,
+  },
   aboutPaddingMobile: {
-    paddingHorizontal: 40,
+    paddingHorizontal: 20,
   },
   aboutHeading: {
     textAlign: "center",
