@@ -44,7 +44,8 @@ const CodeSample: React.FC<CodeSampleProps> = ({
   };
 
   return (
-    <View
+    <TouchableOpacity
+    onPress={handleGithubPress}
       style={[
         styles.container,
         {
@@ -85,7 +86,7 @@ const CodeSample: React.FC<CodeSampleProps> = ({
           />
         ))}
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
