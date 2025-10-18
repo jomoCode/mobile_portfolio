@@ -19,6 +19,7 @@ import { Text, TextContainer, Title } from "../atoms/typogrphy/text";
 import { CodeSample } from "../organisms/code-sample";
 import { ContactSection } from "../organisms/contact";
 import { ProjectInfo } from "../organisms/project_info";
+import { useResponsiveValue } from "@/app/helpers/responsive-values";
 
 const profileIntroduction = "Hello, I&apos;m Jomo";
 const profileSummary =
@@ -90,6 +91,9 @@ const HomeScreen = () => {
   const { theme } = useTheme();
   const { width } = useWindowDimensions();
   const isMdOrLarger = width > 768;
+  const imageHeight = useResponsiveValue({ mobile: 300, tablet: 500, large:600 })
+
+
 
   const backgroundColor =
     theme === "dark" ? COLORS.backgroundDark1 : COLORS.backgroundLight1;
@@ -120,7 +124,8 @@ const HomeScreen = () => {
               style={styles.textLeftAlign}
             />
           </View>
-          <View style={styles.imageContainer}>
+          <View style={[styles.imageContainer, {height:imageHeight}]}>
+            <View/>
             <Image
               source={profileImage}
               alt="Profile image of JomoCode"
@@ -188,8 +193,9 @@ const HomeScreen = () => {
           <Heading text="Projects" style={styles.projectsHeading} />
 
           {/* PROJECT 1 */}
+          <View>
           <SideBySideSection
-          sideBySideContainerHeight={500}
+            sideBySideContainerHeight={500}
             left={
               <ProjectInfo
                 title="Fashion shop"
@@ -209,6 +215,7 @@ const HomeScreen = () => {
           />
 
           {/* PROJECT 2 */}
+          
           <SideBySideSection
             sideBySideContainerHeight={600}
             left={
@@ -226,12 +233,13 @@ const HomeScreen = () => {
                 aspectRatio={16 / 9}
               />
             }
-            style={styles.projectSpacing}
+            style={[styles.projectSpacing]}
           />
+          </View>
         </Section>
 
         {/* CONTACT SECTION */}
-        <Section name="contact" style={{paddingTop:5}}>
+        <Section name="contact" style={{ paddingTop: 5}}>
           <ContactSection
             email="johnjohananmogbolu@gmail.com"
             github="https://github.com/Jomocode"
@@ -293,9 +301,15 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     alignItems: "center",
+    flexDirection:"column",
+    justifyContent:"space-between",
     width: "100%",
+   
   },
-  profileImage: {},
+  profileImage: {
+    padding: 0,
+    maxHeight: 500,
+  },
   aboutWrapper: {
     width: "100%",
     marginBottom: 40,
@@ -303,7 +317,7 @@ const styles = StyleSheet.create({
   aboutSection: {
     paddingTop: 30,
     width: "100%",
-    paddingBottom:50
+    paddingBottom: 50,
   },
   aboutPaddingDesktop: {
     paddingHorizontal: 160,
