@@ -1,10 +1,10 @@
 import React, { ReactNode } from "react";
 import {
   ScrollView,
+  StyleProp,
   StyleSheet,
   useWindowDimensions,
   View,
-  StyleProp,
   ViewStyle,
 } from "react-native";
 
@@ -16,7 +16,7 @@ interface SideBySideSectionProps {
   rightStyle?: StyleProp<ViewStyle>;
   scrollable?: boolean;
   gap?: number;
-  sideBySideContainerHeight?:number;
+  sideBySideContainerHeight?: number;
 }
 
 const SideBySideSection: React.FC<SideBySideSectionProps> = ({
@@ -27,7 +27,7 @@ const SideBySideSection: React.FC<SideBySideSectionProps> = ({
   rightStyle,
   scrollable = false,
   gap = 20,
-  sideBySideContainerHeight
+  sideBySideContainerHeight,
 }) => {
   const { width: screenWidth, height: screenHeight } = useWindowDimensions();
 
@@ -43,10 +43,10 @@ const SideBySideSection: React.FC<SideBySideSectionProps> = ({
     : screenWidth * 0.95;
 
   const containerHeight = isLargeScreen
-    ? sideBySideContainerHeight||screenHeight * 0.8
+    ? sideBySideContainerHeight || screenHeight * 0.8
     : isTablet
-    ? sideBySideContainerHeight||screenHeight * 0.7
-    : sideBySideContainerHeight||screenHeight * 0.6;
+    ? sideBySideContainerHeight || screenHeight * 0.7
+    : sideBySideContainerHeight || screenHeight * 0.6;
 
   const Wrapper = scrollable ? ScrollView : View;
 
@@ -64,7 +64,12 @@ const SideBySideSection: React.FC<SideBySideSectionProps> = ({
       ]}
     >
       <Wrapper
-        style={[styles.side, isTablet && styles.halfWidth, leftStyle]}
+        style={[
+          styles.side,
+          isTablet && styles.halfWidth,
+          { paddingVertical: 10 },
+          leftStyle,
+        ]}
         showsVerticalScrollIndicator={false}
       >
         {left}
@@ -94,4 +99,3 @@ const styles = StyleSheet.create({
 });
 
 export { SideBySideSection };
-

@@ -181,7 +181,7 @@ const HomeScreen = () => {
           <CodeSample
             title="Ecommerce Website"
             description="A mobile ecommerce app for selling used items. Includes authentication, image uploads, notifications, and error tracking."
-            tech={["Javascript", "Html", "Css"]}
+            tech={["Javascript", "Html", "css",]}
             githubUrl="https://github.com/Jomocode/ecommerce"
           />
 
@@ -189,14 +189,7 @@ const HomeScreen = () => {
 
           {/* PROJECT 1 */}
           <SideBySideSection
-            left={
-              <ProjectImage
-                src={require("@/assets/images/fashionshop.png")}
-                alt="Ecommerce Website"
-                aspectRatio={16 / 9}
-              />
-            }
-            right={
+          left={
               <ProjectInfo
                 title="Fashion shop"
                 description="A fully responsive online store with product listings, cart functionality, checkout, and an admin dashboard."
@@ -204,24 +197,35 @@ const HomeScreen = () => {
                 liveLink="https://jomocode.github.io/FashionShop/"
               />
             }
+            right={
+              <ProjectImage
+                src={require("@/assets/images/fashionshop.png")}
+                alt="Ecommerce Website"
+                aspectRatio={16 / 9}
+              />
+            }
+            
             style={styles.projectSpacing}
           />
 
           {/* PROJECT 2 */}
           <SideBySideSection
+          sideBySideContainerHeight={500}
+            
             left={
-              <ProjectImage
-                src={require("@/assets/images/ecommerce.webp")}
-                alt="Ecommerce Website"
-                aspectRatio={16 / 9}
-              />
-            }
-            right={
               <ProjectInfo
                 title="Ecommerce Website"
                 description="A fully responsive online store with product listings, cart functionality, checkout, and an admin dashboard."
                 tech={["Next.js", "Tailwind CSS", "Node.js", "MongoDB"]}
                 liveLink="https://myprojectlive.com"
+              />
+            }
+
+            right={
+              <ProjectImage
+                src={require("@/assets/images/ecommerce.webp")}
+                alt="Ecommerce Website"
+                aspectRatio={16 / 9}
               />
             }
             style={styles.projectSpacing}
@@ -299,7 +303,7 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   aboutSection: {
-    paddingTop: 30,
+    paddingHorizontal: 30,
     width: "100%",
   },
   aboutPaddingDesktop: {
